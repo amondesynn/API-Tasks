@@ -62,7 +62,7 @@ var Treasure = Treasure || (function() {
             ],
             [
                 { roll: range(1, 15), treasure: { ep: "2d6*1000", gp: "8d6*100" } },
-                { roll: range(16, 55), treasure: { gp: "1d6*1000", gp: "1d6*100" } },
+                { roll: range(16, 55), treasure: { gp: "1d6*1000", pp: "1d6*100" } },
                 { roll: range(56, 100), treasure: { gp: "1d6*1000", pp: "2d6*100" } },
             ]
         ],
@@ -77,6 +77,7 @@ var Treasure = Treasure || (function() {
                     ] },
                     { roll: range(17, 26), treasure: [
                         { die: "2d4", type: "art", worth: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
                     ] },
                     { roll: range(27, 36), treasure: [
@@ -86,67 +87,72 @@ var Treasure = Treasure || (function() {
                     { roll: range(37, 44), treasure: [
                         { die: "2d6", type: "gems", worth: 10 },
                         { die: "2d6", type: "alchemy", cost: 10 },
-                        { die: "1d6", type: "magic", table: "a"}
+                        { die: "1d6", type: "magic", table: "a"},
                     ] },
                     { roll: range(45, 52), treasure: [
                         { die: "2d4", type: "art", worth: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
-                        { die: "1d6", type: "magic", table: "a"}
+                        { die: "1d6", type: "magic", table: "a"},
                     ] },
                     { roll: range(53, 60), treasure:[
                         { die: "2d6", type: "gems", worth: 50 },
                         { die: "2d6", type: "alchemy", cost: 50 },
-                        { die: "1d6", type: "magic", table: "a"}
+                        { die: "1d6", type: "magic", table: "a"},
                     ] },
                     { roll: range(61, 65), treasure: [
                         { die: "2d6", type: "gems", worth: 10 },
                         { die: "2d6", type: "alchemy", cost: 10 },
-                        { die: "1d4", type: "magic", table: "b"}
+                        { die: "1d4", type: "magic", table: "b"},
                     ] },
                     { roll: range(66, 70), treasure: [
                         { die: "2d4", type: "art", worth: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
-                        { die: "1d4", type: "magic", table: "b"}
+                        { die: "1d4", type: "magic", table: "b"},
                     ] },
                     { roll: range(71, 75), treasure: [
                         { die: "2d6", type: "gems", worth: 50 },
                         { die: "2d6", type: "alchemy", cost: 50 },
-                        { die: "1d4", type: "magic", table: "b"}
+                        { die: "1d4", type: "magic", table: "b"},
                     ] },
                     { roll: range(76, 78), treasure: [
                         { die: "2d6", type: "gems", worth: 10 },
                         { die: "2d6", type: "alchemy", cost: 10 },
-                        { die: "1d4", type: "magic", table: "c"}
+                        { die: "1d4", type: "magic", table: "c"},
                     ] },
                     { roll: range(79, 80), treasure: [
                         { die: "2d4", type: "art", worth: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
-                        { die: "1d4", type: "magic", table: "c"}
+                        { die: "1d4", type: "magic", table: "c"},
                     ] },
                     { roll: range(81, 85), treasure: [
                         { die: "2d6", type: "gems", worth: 50 },
                         { die: "2d6", type: "alchemy", cost: 50 },
-                        { die: "1d4", type: "magic", table: "c"}
+                        { die: "1d4", type: "magic", table: "c"},
                     ] },
                     { roll: range(86, 92), treasure: [
                         { die: "2d4", type: "art", worth: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
-                        { die: "1d4", type: "magic", table: "f"}
+                        { die: "1d4", type: "magic", table: "f"},
                     ] },
                     { roll: range(93, 97), treasure: [
                         { die: "2d6", type: "gems", worth: 50 },
                         { die: "2d6", type: "alchemy", cost: 50 },
-                        { die: "1d4", type: "magic", table: "f"}
+                        { die: "1d4", type: "magic", table: "f"},
                     ] },
                     { roll: range(98, 99), treasure: [
                         { die: "2d4", type: "art", worth: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
-                        { die: "1", type: "magic", table: "g"}
+                        { die: 1, type: "magic", table: "g"},
                     ] },
                     { roll: [100], treasure: [
                         { die: "2d6", type: "gems", worth: 50 },
                         { die: "2d6", type: "alchemy", cost: 50 },
-                        { die: "1", type: "magic", table: "g"}
+                        { die: 1, type: "magic", table: "g"},
                     ] },
                 ]
             },
@@ -156,139 +162,167 @@ var Treasure = Treasure || (function() {
                     { roll: range(1, 4) },
                     { roll: range(5, 10), treasure: [ 
                         { die: "2d4", worth: 25, type: "art" },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
                     ] },
                     { roll: range(11, 16), treasure: [ 
                         { die: "3d6", worth: 50, type: "gems" },
+                        { die: "3d6", type: "ingot", rank: 1 },
                         { die: "3d6", type: "alchemy", cost: 50 },
                     ] },	
                     { roll: range(17, 22), treasure: [ 
                         { die: "3d6", worth: 100, type: "gems"},
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
                     ] },	
                     { roll: range(23, 28), treasure: [ 
                         { die: "2d4", worth: 250, type: "art" },
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                     ] },		
                     { roll: range(29, 32), treasure: [ 
                         { die: "2d4", worth: 25, type: "art" },
                         { die: "2d4", type: "alchemy", cost: 25 },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "1d6", table: "A", type: "magic" },
                     ] },
                     { roll: range(33, 36), treasure: [ 
                         { die: "3d6", worth: 50, type: "gems"	},
+                        { die: "3d6", type: "ingot", rank: 1 },
                         { die: "3d6", type: "alchemy", cost: 50 },
                         { die: "1d6", table: "A", type: "magic" },
                     ] },
                     { roll: range(37, 40), treasure: [ 
                         { die: "3d6", worth: 100, type: "gems"	},
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
                         { die: "1d6", table: "A", type: "magic" },
                     ] },
                     { roll: range(41, 44), treasure: [ 
                         { die: "2d4", worth: 250, type: "art" },
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { die: "1d6", table: "A", type: "magic" },
                     ] },
                     { roll: range(45, 49), treasure: [ 
                         { die: "2d4", worth: 25, type: "art" },
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
                         { die: "1d4", table: "B", type: "magic" },
                     ] },
                     { roll: range(50, 54), treasure: [ 
-                        { die: "3d6", worth: 50, type: "gems"	}, 
+                        { die: "3d6", worth: 50, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 1 },
                         { die: "3d6", type: "alchemy", cost: 50 },
                         { die: "1d4", table: "B", type: "magic" },
                     ] },
                     { roll: range(55, 59), treasure: [ 
-                        { die: "3d6", worth: 100, type: "gems"	}, 
+                        { die: "3d6", worth: 100, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
                         { die: "1d4", table: "B", type: "magic" },
                     ] },
                     { roll: range(60, 63), treasure: [ 
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { die: "1d4", table: "B", type: "magic" },
                     ] },
                     { roll: range(64, 66), treasure: [ 
                         { die: "2d4", worth: 25, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
                         { die: "1d4", table: "C", type: "magic" },
                     ] },
                     { roll: range(67, 69), treasure: [ 
-                        { die: "3d6", worth: 50, type: "gems"	}, 
+                        { die: "3d6", worth: 50, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 1 },
                         { die: "3d6", type: "alchemy", cost: 50 },
                         { die: "1d4", table: "C", type: "magic" },
                     ] },
                     { roll: range(70, 72), treasure: [ 
-                        { die: "3d6", worth: 100, type: "gems"	}, 
+                        { die: "3d6", worth: 100, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
                         { die: "1d4", table: "C", type: "magic" },
                     ] },
                     { roll: range(73, 74), treasure: [ 
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { die: "1d4", table: "C", type: "magic" },
                     ] },
                     { roll: range(75, 76), treasure: [ 
                         { die: "2d4", worth: 25, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
-                        { die: "1", table: "D", type: "magic" },
+                        { die: 1, table: "D", type: "magic" },
                     ] },
                     { roll: range(77, 78), treasure: [ 
-                        { die: "3d6", worth: 50, type: "gems"	}, 
+                        { die: "3d6", worth: 50, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 1 },
                         { die: "3d6", type: "alchemy", cost: 50 },
-                        { die: "1", table: "D", type: "magic" },
+                        { die: 1, table: "D", type: "magic" },
                     ] },
                     { roll: [79], treasure: [ 
-                        { die: "3d6", worth: 100, type: "gems"	}, 
+                        { die: "3d6", worth: 100, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
-                        { die: "1", table: "D", type: "magic" },
+                        { die: 1, table: "D", type: "magic" },
                     ] },
                     { roll: [80], treasure: [ 
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
-                        { die: "1", table: "D", type: "magic" },
+                        { die: 1, table: "D", type: "magic" },
                     ] },
                     { roll: range(81, 84), treasure: [ 
                         { die: "2d4", worth: 25, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 1 },
                         { die: "2d4", type: "alchemy", cost: 25 },
                         { die: "1d4", table: "F", type: "magic" },
                     ] },
                     { roll: range(85, 88), treasure: [ 
-                        { die: "3d6", worth: 50, type: "gems"	}, 
+                        { die: "3d6", worth: 50, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 1 },
                         { die: "3d6", type: "alchemy", cost: 50 },
                         { die: "1d4", table: "F", type: "magic" },
                     ] },
                     { roll: range(89, 91), treasure: [ 
-                        { die: "3d6", worth: 100, type: "gems"	}, 
+                        { die: "3d6", worth: 100, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
                         { die: "1d4", table: "F", type: "magic" },
                     ] },
                     { roll: range(92, 94), treasure: [ 
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { die: "1d4", table: "F", type: "magic" },
                     ] },
                     { roll: range(95, 96), treasure: [ 
-                        { die: "3d6", worth: 100, type: "gems"	}, 
+                        { die: "3d6", worth: 100, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
                         { die: "1d4", table: "G", type: "magic" },
                     ] },
                     { roll: range(97, 98), treasure: [ 
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { die: "1d4", table: "G", type: "magic" },
                     ] },
                     { roll: [99], treasure: [ 
-                        { die: "3d6", worth: 100, type: "gems"	}, 
+                        { die: "3d6", worth: 100, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 100 },
-                        { die: "1", table: "H", type: "magic" },
+                        { die: 1, table: "H", type: "magic" },
                     ] },
                     { roll:[100], treasure: [ 
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
-                        { die: "1", table: "H", type: "magic" },
+                        { die: 1, table: "H", type: "magic" },
                     ] },
                 ]
             },
@@ -300,164 +334,196 @@ var Treasure = Treasure || (function() {
                     ] } ,
                     { roll: range(4, 6), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                     ] } ,
                     { roll: range(7, 9), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                     ] } ,
                     { roll: range(10, 12), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                     ] } ,
                     { roll: range(13, 15), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                     ] } ,
                     { roll: range(16, 19), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: "1d4", table: "A" }, 
-                        { type: "magic", die: "1d6", table: "B" }
+                        { type: "magic", die: "1d6", table: "B" },
                     ] } ,
                     { roll: range(20, 23), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: "1d4", table: "A" }, 
-                        { type: "magic", die: "1d6", table: "B" }
+                        { type: "magic", die: "1d6", table: "B" },
                     ] } ,
                     { roll: range(24, 26), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: "1d4", table: "A" }, 
-                        { type: "magic", die: "1d6", table: "B" }
+                        { type: "magic", die: "1d6", table: "B" },
                     ] } ,
                     { roll: range(27, 29), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d4", table: "A" }, 
-                        { type: "magic", die: "1d6", table: "B" }
+                        { type: "magic", die: "1d6", table: "B" },
                     ] } ,
                     { roll: range(30, 35), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: "1d6", table: "C" },
                     ] } ,
                     { roll: range(36, 40), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: "1d6", table: "C" },
                     ] } ,
                     { roll: range(41, 45), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: "1d6", table: "C" },
                     ] } ,
                     { roll: range(46, 50), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d6", table: "C" },
                     ] } ,
                     { roll: range(51, 54), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: "1d4", table: "D" },
                     ] } ,
                     { roll: range(55, 58), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: "1d4", table: "D" },
                     ] } ,
                     { roll: range(59, 62), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: "1d4", table: "D" },
                     ] } ,
                     { roll: range(63, 66), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d4", table: "D" },
                     ] } ,
                     { roll: range(67, 68), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: 1, table: "E" },
                     ] } ,
                     { roll: range(69, 70), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: 1, table: "E" },
                     ] } ,
                     { roll: range(71, 72), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: 1, table: "E" },
                     ] } ,
                     { roll: range(73, 74), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: 1, table: "E" },
                     ] } ,
                     { roll: range(75, 76), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: 1, table: "F" }                                  
                     ] } ,
                     { roll: range(77, 78), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: 1, table: "F" },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: range(79, 80), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: 1, table: "F" },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: range(81, 82), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: 1, table: "F" },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: range(83, 85), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(86, 88), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(89, 90), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(91, 92), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(93, 94), treasure: [
                         { die: "2d4", worth: 250, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 2 },
                         { die: "2d4", type: "alchemy", cost: 250 },
                         { type: "magic", die: 1, table: "I" },
                     ] } ,
                     { roll: range(95, 96), treasure: [
                         { die: "2d4", worth: 750, type: "art" }, 
+                        { die: "2d4", type: "ingot", rank: 3 },
                         { die: "2d4", type: "alchemy", cost: 750 },
                         { type: "magic", die: 1, table: "I" },
                     ] } ,
                     { roll: range(97, 98), treasure: [
                         { die: "3d6", worth: 500, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 2 },
                         { die: "3d6", type: "alchemy", cost: 500 },
                         { type: "magic", die: 1, table: "I" },
                     ] } ,
                     { roll: range(99, 100), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: 1, table: "I" },
                     ] },
@@ -467,131 +533,158 @@ var Treasure = Treasure || (function() {
                 coins: { gp: "12d6*1000", pp: "8d6*1000" },
                 objects: [
                     { roll: range(1, 2), treasure: [
+                        { die: 1, type: "ingot", rank: 5 },
                         { die: 1, type: "alchemy", cost: 10000 },
                     ] } ,
                     { roll: range(3, 5), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d8", table: "C" },
                     ] } ,
                     { roll: range(6, 8), treasure: [
                         { die: "1d10", worth: 2500, type: "art" }, 
+                        { die: "1d10", type: "ingot", rank: 3 },
                         { die: "1d10", type: "alchemy", cost: 2500 },
                         { type: "magic", die: "1d8", table: "C" },
                     ] } ,
                     { roll: range(9, 11), treasure: [
                         { die: "1d4", worth: 7500, type: "art" }, 
+                        { die: "1d4", type: "ingot", rank: 4 },
                         { die: "1d4", type: "alchemy", cost: 7500 },
                         { type: "magic", die: "1d8", table: "C" },
                     ] } ,
                     { roll: range(12, 14), treasure: [
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 4 },
                         { die: "1d8", type: "alchemy", cost: 5000 },
                         { type: "magic", die: "1d8", table: "C" },
                     ] } ,
                     { roll: range(15, 22), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d6", table: "D" },
                     ] } ,
                     { roll: range(23, 30), treasure: [
                         { die: "1d10", worth: 2500, type: "art" }, 
+                        { die: "1d10", type: "ingot", rank: 3 },
                         { die: "1d10", type: "alchemy", cost: 2500 },
                         { type: "magic", die: "1d6", table: "D" },
                     ] } ,
                     { roll: range(31, 38), treasure: [
                         { die: "1d4", worth: 7500, type: "art" }, 
+                        { die: "1d4", type: "ingot", rank: 4 },
                         { die: "1d4", type: "alchemy", cost: 7500 },
                         { type: "magic", die: "1d6", table: "D" },
                     ] } ,
                     { roll: range(39, 46), treasure: [
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 4 },
                         { die: "1d8", type: "alchemy", cost: 5000 },
                         { type: "magic", die: "1d6", table: "D" },
                     ] } ,
                     { roll: range(47, 52), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d6", table: "E" },
                     ] } ,
                     { roll: range(53, 58), treasure: [
                         { die: "1d10", worth: 2500, type: "art" }, 
+                        { die: "1d10", type: "ingot", rank: 3 },
                         { die: "1d10", type: "alchemy", cost: 2500 },
                         { type: "magic", die: "1d6", table: "E" },
                     ] } ,
                     { roll: range(59, 63), treasure: [
                         { die: "1d4", worth: 7500, type: "art" }, 
+                        { die: "1d4", type: "ingot", rank: 4 },
                         { die: "1d4", type: "alchemy", cost: 7500 },
                         { type: "magic", die: "1d6", table: "E" },
                     ] } ,
                     { roll: range(64, 68), treasure: [
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 4 },
                         { die: "1d8", type: "alchemy", cost: 5000 },
                         { type: "magic", die: "1d6", table: "E" },
                     ] } ,
                     { roll: [69], treasure: [	
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: [70], treasure: [	
                         { die: "1d10", worth: 2500, type: "art" }, 
+                        { die: "1d10", type: "ingot", rank: 3 },
                         { die: "1d10", type: "alchemy", cost: 2500 },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: [71], treasure: [	
                         { die: "1d4", worth: 7500, type: "art" }, 
+                        { die: "1d4", type: "ingot", rank: 4 },
                         { die: "1d4", type: "alchemy", cost: 7500 },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: [72], treasure: [	
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 4 },
                         { die: "1d8", type: "alchemy", cost: 5000 },
                         { type: "magic", die: "1d4", table: "G" },
                     ] } ,
                     { roll: range(73, 74), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(75, 76), treasure: [
                         { die: "1d10", worth: 2500, type: "art" }, 
+                        { die: "1d10", type: "ingot", rank: 3 },
                         { die: "1d10", type: "alchemy", cost: 2500 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(77, 78), treasure: [
                         { die: "1d4", worth: 7500, type: "art" }, 
+                        { die: "1d4", type: "ingot", rank: 4 },
                         { die: "1d4", type: "alchemy", cost: 7500 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(79, 80), treasure: [
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 4 },
                         { die: "1d8", type: "alchemy", cost: 5000 },
                         { type: "magic", die: "1d4", table: "H" },
                     ] } ,
                     { roll: range(81, 85), treasure: [
                         { die: "3d6", worth: 1000, type: "gems" }, 
+                        { die: "3d6", type: "ingot", rank: 3 },
                         { die: "3d6", type: "alchemy", cost: 1000 },
                         { type: "magic", die: "1d4", table: "I" },
                     ] } ,
                     { roll: range(86, 90), treasure: [
                         { die: "1d10", worth: 2500, type: "art" }, 
+                        { die: "1d10", type: "ingot", rank: 3 },
                         { die: "1d10", type: "alchemy", cost: 2500 },
                         { type: "magic", die: "1d4", table: "I" },
                     ] } ,
                     { roll: range(91, 95), treasure: [
                         { die: "1d4", worth: 7500, type: "art" }, 
+                        { die: "1d4", type: "ingot", rank: 4 },
                         { die: "1d4", type: "alchemy", cost: 7500 },
                         { type: "magic", die: "1d4", table: "I" },
                     ] } ,
                     { roll: range(96, 99), treasure: [
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 4 },
+                        { die: "1d4", type: "ingot", rank: 5 },
                         { die: "1d8", type: "alchemy", cost: 5000 },
                         { die: "1d4", type: "alchemy", cost: 10000 },
                         { type: "magic", die: "1d4", table: "I" },
                     ] } ,
                     { roll: range[100], treasure: [
                         { die: "1d8", worth: 5000, type: "gems" }, 
+                        { die: "1d8", type: "ingot", rank: 5 },
                         { die: "1d4", type: "alchemy", cost: 10000 },
                         { type: "magic", die: "1d4", table: "I" },
                     ] }
@@ -726,6 +819,53 @@ var Treasure = Treasure || (function() {
             'Jade game board with solid gold playing pieces (7.500G)',
             'Bejeweled ivory drinking horn with gold filigree (7.500G)',
         ],
+    },
+
+    ingotTables = {
+        1 : [
+	'Bronze Ingot',
+	'Iron Ingot',
+	'Steel Ingot',
+	'Cold Iron Ingot',
+	'Mithral Ingot',
+	'Plaguesteel Ingot',
+	'Silver Ingot',
+        ],
+        2 : [
+	'Cold Iron Ingot',
+	'Mithral Ingot',
+	'Plaguesteel Ingot',
+	'Silver Ingot',
+	'Adamantine Ingot',
+	'Darksteel Ingot',
+	'Orichalcum Ingot',
+        ],
+        3 : [
+	'Adamantine Ingot',
+	'Darksteel Ingot',
+	'Orichalcum Ingot',
+	'Asmoroch Steel Ingot',
+	'Dwarvenstone Ingot',
+	'Infernal Steel Ingot',
+	'Stellar Iron Ingot',
+        ],
+        4 : [
+	'Asmoroch Steel Ingot',
+	'Dwarvenstone Ingot',
+	'Infernal Steel Ingot',
+	'Stellar Iron Ingot',
+	'Abyssal Bloodiron Ingot',
+	'Astral Driftmetal Ingot',
+	'Pandemonic Silver Ingot',
+	'Solanian Truesteel Ingot',
+        ],
+        5 : [
+	'Abyssal Bloodiron Ingot',
+	'Astral Driftmetal Ingot',
+	'Pandemonic Silver Ingot',
+	'Solanian Truesteel Ingot',
+	'Starmetal Ingot',
+        ]
     },
 
     alchemyTables = {
@@ -1997,7 +2137,7 @@ var Treasure = Treasure || (function() {
                     sp: 0,
                     ep: 0,
                     pp: 0,
-                    gp: 0   
+                    gp: 0,   
                 },
                 objects: []
             };
@@ -2027,6 +2167,11 @@ var Treasure = Treasure || (function() {
                         case 'art':
                             amount = (obj.die === "1" || obj.die === 1) ? 1 :  rollDieString(obj.die);
                             result.objects.push({ object: artTables[obj.worth][randomBetween(0, artTables[obj.worth].length-1)], amount: amount, type: 'art' });
+                        break;
+
+                        case 'ingot':
+                            amount = (obj.die === "1" || obj.die === 1) ? 1 :  rollDieString(obj.die);
+                            result.objects.push({ object: ingotTables[obj.rank][randomBetween(0, ingotTables[obj.rank].length-1)], amount: amount, type: 'ingot' });
                         break;
 
                         case 'alchemy':
@@ -2113,7 +2258,7 @@ var Treasure = Treasure || (function() {
     },
 
     sendTreasureToChat = (what='all', override) => {
-        let target, contents, currency_contents, gem_contents, art_contents, alchemy_contents, magic_contents;
+        let target, contents, currency_contents, gem_contents, art_contents, ingot_contents, alchemy_contents, magic_contents;
 
         currency_contents = '<h5>Currency</h5>';
         for(var currency in treasure.currency){
@@ -2140,6 +2285,14 @@ var Treasure = Treasure || (function() {
             })
         }
 
+        if(grouped.get('ingot') && grouped.get('ingot').length){
+            ingot_contents = "<h5>Ingot</h5>";
+            grouped.get('ingot').forEach(obj => {
+                ingot_contents += (obj.amount) ? obj.amount + 'x ' : '';
+                ingot_contents += obj.object + '<br>';
+            })
+        }
+
         if(grouped.get('alchemy') && grouped.get('alchemy').length){
             alchemy_contents = "<h5>Alchemy</h5>";
             grouped.get('alchemy').forEach(obj => {
@@ -2159,6 +2312,7 @@ var Treasure = Treasure || (function() {
         contents = currency_contents;
         if(gem_contents) contents += '<br>'+gem_contents;
         if(art_contents) contents += '<br>'+art_contents;
+        if(ingot_contents) contents += '<br>'+ingot_contents;
         if(alchemy_contents) contents += '<br>'+alchemy_contents;
         
         if(override){
